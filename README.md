@@ -1,4 +1,4 @@
-# sistema-simples-python
+# Sistema de Exibição e Controle de Passagens
 Trabalho de LP1
 
 O trabalho implementa um sistema simples de consulta de preços e compras de passagens.

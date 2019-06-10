@@ -125,3 +125,24 @@ Consistem em um objeto que possui um dicionário que guarda todas as informaçõ
 
 - `imprimirViagens(menuCompras=False)` : imprime todas as viagens do usuário que estão escritas no arquivo `viagens-{username}.csv`.
 
+
+## Esclarecimentos
+
+**Porque guardar informações em arquivos?**
+
+Ao salvar as informações em arquivos, garantimos que mesmo depois que o programa for fechado, continuamos tendo acesso aos dados como foram manipulados em um uso anterior do programa. Os dados persistem.
+
+**Porque os arquivos são .csv?**
+
+Usei o Google Planilhas para escrever os dados de passagens e usuários para testar, lá podemos fazer o download do arquivo de planilha como `csv separado por vírgula`, o que fica mais fácil de ler e mexer no python, além de poupar um pouco do trabalho de escrever as coisas no arquivo e de ver os dados.
+
+**Porque separar o usuário e as viagens em classes?**
+
+Para ter uma modularização melhor do programa e para que o código não fique tão poluído de olha. 
+
+**Porque separar as funções em um arquivo de uteis?**
+
+Muitas dessas funções funcionam usando strings grandes e com cores diferentes, o que deixar o código principal muito poluído e dificil de ler. Separando essas funcões em outro arquivo, fica mais fácil de entender o que acontece na main.
+
+**De onde eu tirei as cores?**
+https://github.com/mlpbraga/utils/blob/master/terminal-colors.md

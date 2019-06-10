@@ -3,10 +3,69 @@ Trabalho de LP1
 
 O trabalho implementa um sistema simples de consulta de preços e compras de passagens.
 
-O sistema consiste em 3 arquivos: 
+O sistema consiste em 4 arquivos:
+* `uteis.py` - arquivo com funções uteis durante a execução do programa, principalmente para melhorar a interface
 * `main.py`  - arquivo com o loop de repetição que executa as funções de menu
-* `usuarios.py` - arquivo com implementações de uma classe para um usuário do sistema
 * `viagens.py` - arquivo com implementações de uma classe para as viagens de usuário ou do sistema inteiro
+* `usuarios.py` - arquivo com implementações de uma classe para um usuário do sistema
+
+## Arquivo uteis.py
+Esse arquivo engloba diversas funções utilizadas ao longo do programa, são elas:
+
+- `escreveArquivoViagens()` : essa função foi criada para criar o arquivo com todas as viagens que estarão disponíveis no sistema para o usuário, ela abre o arquivo `viagens.csv` e insere nele todas as viagens possíveis. Essa função não deve imprimir nada na tela.
+
+- `imprimeTitulo()` : essa função foi criada para exibir a mensagem de boas vindas quando o programa abre, quando chamada ela imprime a seguinte mensagem:
+
+```
+------------------------------------------------------------------------------------------
+Bem vindo a MV.ARLINES.
+Sua melhor opção para viajar o Brasil.
+Realize seu cadastro ou entre na sua conta!
+------------------------------------------------------------------------------------------
+```
+
+- `imprimeDicionario(dicionario)` : foi criada para imprimir dicionários referentes as viagens, passando uma viagem como parâmetro para essa função, temos uma saída no formato abaixo, que representa uma viagem cuja passagem pode ser comprada pelo usuário:
+```
+------------------------------------------------------------------------------------------
+Voo: 87JK                        Preço: R$836.03
+Data de ida: 12/06/2019          Data de chegada:12/06/2019
+Horário da ida: 18h32m           Horário da chegada:20h47m
+Local de partida: São Paulo      Local de destino: Manaus
+```
+
+- `imprimeMenuDeCompra()` : foi criada pra imprimir o menu exibido abaixo e questionar se o usuário tem o desejo de comprar uma passagem em um dos voos listados ou não:
+
+```
+------------------------------------------------------------------------------------------
+1 - Comprar uma passagem
+2 - Voltar para o menu principal
+```
+
+- `imprimeMenuInicial()` : essa função exibe as opções do menu inicial do programa e recebe o tipo de operação que o usuário deseja realizar, a mensagem que essa função exibe na tela é como a mensagem abaixo:
+
+```
+-------------------------------------- MENU INICIAL --------------------------------------
+1 - Cadastrar uma conta
+2 - Entrar na minha conta
+```
+
+- `imprimeMenuPrincipal()` : essa função exibe as opções do menu principal do programa e recebe o tipo de operaçao que o usuário deseja realizar, a mensagem que essa função exibe na tela é como a mensagem abaixo:
+```
+------------------------------------- MENU PRINCIPAL -------------------------------------
+1 - Listar todas as viagens
+2 - Pesquisar passagens por preço
+3 - Pesquisar por locais e partida e destino
+4 - Listar minhas viagens
+5 - Sair
+```
+
+- `imprimirMenuMinhasViagens()` :  essa função exibe as opções do menu "minhas viagens" do usuário, a mensagem exibida por essa função deve ser como a mensagem abaixo:
+
+```
+------------------------------------- MINHAS VIAGENS -------------------------------------
+1 - Remover viagem
+2 - Voltar para o menu principal
+```
 
 ## Classe Viagens
 Consiste em um objeto que possui uma lista de dicionários, onde cada dicionário corresponde a uma viagem cadastrada no início do programa. As viagens cadastradas são armazenadas no arquivo `viagens.csv`. Abaixo, segue um exemplo do dicionário que representa uma viagem:

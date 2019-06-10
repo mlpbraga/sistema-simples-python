@@ -8,8 +8,34 @@ O sistema consiste em 3 arquivos:
 * `usuarios.py` - arquivo com implementações de uma classe para um usuário do sistema
 * `viagens.py` - arquivo com implementações de uma classe para as viagens de usuário ou do sistema inteiro
 
+## Classe Viagens
+Consiste em um objeto que possui uma lista de dicionários, onde cada dicionário corresponde a uma viagem cadastrada no início do programa. As viagens cadastradas são armazenadas no arquivo `viagens.csv`. Abaixo, segue um exemplo do dicionário que representa uma viagem:
+
+```json
+{
+  "Partida": "São Paulo",
+  "Destino": "Manaus",
+  "HoraPartida": "18h32m",
+  "HoraChegada": "20h47m",
+  "DataPartida": "12/06/2019",
+  "DataChegada": "12/06/2019",
+  "Voo": "87JK",
+  "Preço": 836.03
+}
+```
+**Métodos da classe Viagens:**
+
+- `listarTodas()` : lista de forma amigável todas as viagens cadastradas no início do programa e armazenadas em `viagens.csv`.
+
+- `precoMenorQue(limite)` : lista todas as viagens que estão cadastradas no sistema **e** tem um preço abaixo do `limite` passado como parâmetro.
+
+- `partidaDestino(partida, destino)` : lista todas as viagens que estão cadastradas no sistema **e** partem do parâmetro passado como `partida` e chegam no parâmetro passado como `destino`.
+
+- `getVoo(voo)` : pega todas as informações de uma viagem para o código do Voo passado como parâmetro.
+
+
 ## Classe Usuario
-Consistem em um dicionário que guarda todas as informações de um Usuário. Todos os usuários são escritos em um arquivo chamado `person.csv`. Abaixo, segue um exemplo do dicionário que representa um usuário
+Consistem em um objeto que possui um dicionário que guarda todas as informações de um Usuário. Todos os usuários são escritos em um arquivo chamado `person.csv`. Abaixo, segue um exemplo do dicionário que representa um usuário
 
 ```json
 {

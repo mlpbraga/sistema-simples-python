@@ -6,7 +6,7 @@ class Usuario:
         self.dados = dict()
 
     def cadastrar(self):
-        print('\33[94m> Preencha os seguintes dados de cadastro.')
+        print('\n\33[94m> Preencha os seguintes dados de cadastro.')
         self.dados['Usuario'] = input('>> Usuario: ')
         self.dados['Senha'] = input('>> Senha: ')
         confirma = input('>> Confirme sua senha: ')
@@ -62,11 +62,11 @@ class Usuario:
                         chave_valor = atributo.split(':')
                         usuario[chave_valor[0]] = chave_valor[1]
                     self.dados = usuario
-                    print('\33[92m> Bem vindo(a), ' + self.dados['Nome'] + '.\33[94m') 
+                    print('\n\33[92m> Bem vindo(a), ' + self.dados['Nome'] + '.\33[94m') 
 
                     return self.dados
         
-        print('\33[95m> Usuário ou senha não encontrados.\33[94m') 
+        print('\n\33[95m> Usuário ou senha não encontrados.\33[94m') 
         return None
 
     def inserirViagem(self, viagem):

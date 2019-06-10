@@ -33,7 +33,7 @@ class Viagens:
 
     def precoMenorQue(self, limite):
         tinha = False
-        print('\33[94m> Passagens com valor menor que \33[23mR$ ' +
+        print('\33[94m> Passagens com valor menor ou igual a \33[23mR$ ' +
               str(limite) + '\33[94m')
         for elemento in self.lista:
             if elemento.get('Preço') <= limite:
@@ -51,7 +51,7 @@ class Viagens:
         print('\33[94m> Passagens que saem de \33[93m' +
               partida + ' e vão até ' + destino + '\33[94m')
         for elemento in self.lista:
-            if elemento.get('Partida') == partida and elemento.get('Destino') == destino:
+            if elemento.get('Partida').lower() == partida.lower() and elemento.get('Destino').lower() == destino.lower():
                 imprimeDicionario(elemento)
                 tinha = True
         if tinha:
@@ -63,5 +63,6 @@ class Viagens:
 
     def getVoo(self, voo):
         for elemento in self.lista:
-            if elemento.get('Voo') == voo:
+            if elemento.get('Voo').lower() == voo.lower():
                 return elemento
+        return False

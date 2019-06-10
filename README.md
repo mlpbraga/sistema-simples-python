@@ -9,6 +9,10 @@ O sistema consiste em 4 arquivos:
 * `viagens.py` - arquivo com implementações de uma classe para as viagens de usuário ou do sistema inteiro
 * `usuarios.py` - arquivo com implementações de uma classe para um usuário do sistema
 
+## Arquivo main.py
+Esse arquivo contém toda a lógica de repetição e continuidade das exibições de menu e acesso ao sistema. Nele existe uma função chamada `main()` que, dependendo das respostas do usuário, decide o que será feito no programa.
+Ao fim desse arquivo, temos a criação do objeto de viagens, a escrita do arquivo que contém todas as viagens possíveis para o usuário e a chamada da função main.
+
 ## Arquivo uteis.py
 Esse arquivo engloba diversas funções utilizadas ao longo do programa, são elas:
 

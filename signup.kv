@@ -1,0 +1,149 @@
+#:include connected.kv
+
+<Signup>:
+    BoxLayout
+        id: signup_layout
+        orientation: 'vertical'
+
+        Label:
+            text: 'Cadastro'
+            font_size: 32
+            size: root.width, 60
+            size_hint: None, None
+
+        BoxLayout:
+            orientation: 'horizontal'
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'Usuario'
+                        halign: 'left'
+                        # # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: login
+                        hint_text: 'username'
+                        multiline:False
+                        font_size: 32
+                        valign: 'middle'
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Senha'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: password
+                        multiline:False
+                        password:True
+                        font_size: 32
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Confirme a Senha'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: confirm_password
+                        multiline:False
+                        password:True
+                        font_size: 32
+                
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'Nome'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: nome
+                        multiline:False
+                        font_size: 32
+            
+            
+            
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'Ano de nascimento'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: ano_nascimento
+                        multiline:False
+                        font_size: 32
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'CPF'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: cpf
+                        multiline:False
+                        font_size: 32
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'Email'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: email
+                        multiline:False
+                        font_size: 32
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    Label:
+                        text: 'Telefone'
+                        halign: 'left'
+                        # text_size: root.width-20, 20
+
+                    TextInput:
+                        id: telefone
+                        multiline:False
+                        font_size: 32
+        BoxLayout:
+            size: root.width, 250
+            size_hint: None, None
+            orientation: 'vertical'
+
+            Label:
+                text: 'Endereço'
+                halign: 'left'
+                # text_size: root.width-20, 20
+
+            TextInput:
+                id: endereco
+                multiline:False
+                font_size: 32
+        BoxLayout:
+            orientation: 'horizontal'
+            size: root.width, 150
+            size_hint: None, None
+            Button:
+                text: 'Voltar'
+                on_press: root.voltar()
+            Button:
+                text: 'Cadastrar'
+                on_press: root.do_signup(login.text, password.text, nome.text, ano_nascimento.text, cpf.text, email.text, telefone.text, endereco.text)
+           

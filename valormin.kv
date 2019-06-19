@@ -1,0 +1,31 @@
+#:include listagem.kv
+#:include connected.kv
+
+<Valormin>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'Insira o valor mínimo da passagem que deseja comprar:'
+
+        TextInput:
+            halign: 'center'
+            placeholder: '1000.0'
+            size: root.width, 150
+            size_hint: None, None
+            id: valormini
+            multiline:False
+            font_size: 32
+        BoxLayout:
+            orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'horizontal'
+            size: root.width, 150
+            size_hint: None, None
+            Button:
+                text: 'Voltar'
+                on_press: root.voltar()
+            Button:
+                text: 'Pesquisar'
+                on_press: root.show(float(valormini.text))
+        

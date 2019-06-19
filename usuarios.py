@@ -5,6 +5,28 @@ class Usuario:
     def __init__(self):
         self.dados = dict()
 
+    def cadastro(self, loginText, passwordText, nameText, dateText, adressText, cpfText, phoneText, mailText):
+        self.dados['Usuario'] = loginText
+        self.dados['Senha'] = passwordText
+        self.dados['Nome'] = nameText
+        self.dados['Idade'] = datetime.now().year - int(dateText)
+        self.dados['CPF'] = cpfText
+        self.dados['Email'] = mailText
+        self.dados['Telefone'] = phoneText
+        self.dados['Endereço'] = adressText
+
+        print('\33[92m> Cadastro realizado com sucesso!\33[94m')
+        with open('person.csv', 'a+') as f:
+            ultima = list(self.dados.keys())[-1]
+            for chave in self.dados.keys():
+                f.write(chave + ':' + str(self.dados[chave]))
+                if chave == ultima:
+                    f.write(';\n')
+                else:
+                    f.write(',')
+        novo = open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'w')
+        novo.close()
+
     def cadastrar(self):
         print('\n\33[94m> Preencha os seguintes dados de cadastro.')
         self.dados['Usuario'] = input('>> Usuario: ')
@@ -50,21 +72,22 @@ class Usuario:
                 print('\33[95m> Responda S para sim ou N para não.\33[94m')
 
     def entrar(self, user, senha):
-        with open('person.csv', 'r') as f:
-            dados = f.readlines()
-            usuario = dict({})
-            for dado in dados:
-                usario_valido = 'Usuario:'+user in dado
-                senha_valida = 'Senha:'+senha in dado
-                if usario_valido and senha_valida:
-                    atributos = dado.strip(';').split(',')
-                    for atributo in atributos:
-                        chave_valor = atributo.split(':')
-                        usuario[chave_valor[0]] = chave_valor[1]
-                    self.dados = usuario
-                    print('\n\33[92m> Bem vindo(a), ' + self.dados['Nome'] + '.\33[94m') 
+        if user != '' and senha != '':
+            with open('person.csv', 'r') as f:
+                dados = f.readlines()
+                usuario = dict({})
+                for dado in dados:
+                    usario_valido = 'Usuario:'+user in dado
+                    senha_valida = 'Senha:'+senha in dado
+                    if usario_valido and senha_valida:
+                        atributos = dado.strip(';').split(',')
+                        for atributo in atributos:
+                            chave_valor = atributo.split(':')
+                            usuario[chave_valor[0]] = chave_valor[1]
+                        self.dados = usuario
+                        print('\n\33[92m> Bem vindo(a), ' + self.dados['Nome'] + '.\33[94m') 
 
-                    return self.dados
+                        return self.dados
         
         print('\n\33[95m> Usuário ou senha não encontrados.\33[94m') 
         return None
@@ -98,3 +121,8 @@ class Usuario:
     def imprimirViagens(self, menuCompras=False):
         v = Viagens('viagens-' + self.dados['Usuario'].lower() + '.csv')
         v.listarTodas(menuCompras=False)
+
+    def mostrarTodasViagens(self):
+        v = Viagens('viagens-' + self.dados['Usuario'].lower() + '.csv')
+        return v.mostrarTodas()
+    

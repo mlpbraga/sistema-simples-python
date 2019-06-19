@@ -66,3 +66,76 @@ class Viagens:
             if elemento.get('Voo').lower() == voo.lower():
                 return elemento
         return False
+
+    def mostrarTodas(self):
+        palavras = ''
+        palavras += '\nListagem de todas as viagens disponíveis'
+        if len(self.lista) > 0:
+            for elemento in self.lista:
+                palavras += '\n' + '-'*90
+                palavras += '\nVoo: ' + elemento.get('Voo') + ' Preço: R$' + str(
+                    elemento['Preço']) + '\nLocal de partida: ' + elemento['Partida'] + ' |  Local de destino: ' + elemento['Destino']
+                palavras += '\nData de ida: ' + elemento['DataPartida'] + ' |  Horário da ida: ' + elemento['HoraPartida'] + \
+                    '\nData de chegada: ' + \
+                    elemento['DataChegada'] + \
+                    ' | Horário da chegada: ' + elemento['HoraChegada']
+        else: 
+            palavras = 'Não tem nada aqui :/'
+        return palavras
+
+    def mostrarPrecoMenor(self, limite):
+        palavras = ''
+        palavras += '\nListagem de todas as viagens disponíveis com preço menor que R$ {}'.format(
+            limite)
+        print('\33[94m> Passagens com valor menor ou igual a \33[23mR$ ' +
+              str(limite) + '\33[94m')
+        if len(self.lista) > 0:
+            for elemento in self.lista:
+                if elemento.get('Preço') <= limite:
+                    palavras += '\n' + '-'*90
+                    palavras += '\nVoo: ' + elemento.get('Voo') + ' Preço: R$' + str(
+                        elemento['Preço']) + '\nLocal de partida: ' + elemento['Partida'] + ' |  Local de destino: ' + elemento['Destino']
+                    palavras += '\nData de ida: ' + elemento['DataPartida'] + ' |  Horário da ida: ' + elemento['HoraPartida'] + \
+                        '\nData de chegada: ' + \
+                        elemento['DataChegada'] + \
+                        ' | Horário da chegada: ' + elemento['HoraChegada']
+        else:
+            palavras += '\n' + '-'*90
+            palavras += 'Não encontrei resultados para essa consulta :c'
+
+        return palavras
+
+    def mostrarPartidaDestino(self, partida, destino):
+        palavras = ''
+        palavras += 'Listagem de todas as viagens disponíveis que saem de {0} e vão até {1}'.format(
+            partida, destino)
+        ('\33[94m> Passagens que saem de \33[93m' +
+         partida + ' e vão até ' + destino + '\33[94m')
+        if len(self.lista) > 0:
+            for elemento in self.lista:
+                if elemento.get('Partida').lower() == partida.lower() and elemento.get('Destino').lower() == destino.lower():
+                    palavras += '\n' + '-'*90
+                    palavras += '\nVoo: ' + elemento.get('Voo') + ' Preço: R$' + str(
+                        elemento['Preço']) + '\nLocal de partida: ' + elemento['Partida'] + ' |  Local de destino: ' + elemento['Destino']
+                    palavras += '\nData de ida: ' + elemento['DataPartida'] + ' |  Horário da ida: ' + elemento['HoraPartida'] + \
+                        '\nData de chegada: ' + \
+                        elemento['DataChegada'] + \
+                        ' | Horário da chegada: ' + elemento['HoraChegada']
+        else:
+            palavras += '\n' + '-'*90
+            palavras += 'Não encontrei resultados para essa consulta :c'
+        return palavras
+
+    def mostrarVoo(self, voo):
+        palavras = ''
+        for elemento in self.lista:
+            if elemento.get('Voo').lower() == voo.lower():
+                palavras += '\nVoo: ' + elemento.get('Voo') + ' Preço: R$' + str(
+                    elemento['Preço']) + '\nLocal de partida: ' + elemento['Partida'] + ' |  Local de destino: ' + elemento['Destino']
+                palavras += '\nData de ida: ' + elemento['DataPartida'] + ' |  Horário da ida: ' + elemento['HoraPartida'] + \
+                    '\nData de chegada: ' + \
+                    elemento['DataChegada'] + \
+                    ' | Horário da chegada: ' + elemento['HoraChegada']
+        if palavras == '':
+            palavras += 'Ops, ocorreu um erro'
+        return palavras

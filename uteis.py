@@ -1,9 +1,11 @@
+stringTitulo = 'Bem vindo a MV.ARLINES.\nSua melhor opção para viajar o Brasil.\nRealize seu cadastro ou entre na sua conta!'
+
 def escreveArquivoViagens():
     with open('viagens.csv', 'w') as f:
         f.write("Partida:São Paulo,Destino:Manaus,HoraPartida:18h22m,HoraChegada:20h47m,DataPartida:12/06/2019,DataChegada:12/06/2019,Voo:87JK,Preço:836.03;\n\
 Partida:São Paulo,Destino:Rio de Janeiro,HoraPartida:23h41m,HoraChegada:01h28m,DataPartida:12/06/2019,DataChegada:13/06/2019,Voo:AI1O,Preço:421.30;\n\
 Partida:São Paulo,Destino:Fortaleza,HoraPartida:13h02m,HoraChegada:17h10m,DataPartida:14/07/2019,DataChegada:14/07/2019,Voo:JS52,Preço:727.41;\n\
-Partida:São Paulo,Destino:Porto Alegre,HoraPartida:21h22m,HoraChegada:23h10m,DataPartida:13/07/2019,DataChegada:13/07/2019,Voo:JS52,Preço:622.45;\n\
+Partida:São Paulo,Destino:Porto Alegre,HoraPartida:21h22m,HoraChegada:23h10m,DataPartida:13/07/2019,DataChegada:13/07/2019,Voo:JS53,Preço:622.45;\n\
 Partida:São Paulo,Destino:Salvador,HoraPartida:05h10m,HoraChegada:08h29m,DataPartida:13/07/2019,DataChegada:13/07/2019,Voo:OI19,Preço:722.45;\n\
 Partida:Salvador,Destino:Manaus,HoraPartida:12h34m,HoraChegada:14h49m,DataPartida:12/06/2019,DataChegada:12/06/2019,Voo:ABW2,Preço:836.03;\n\
 Partida:Salvador,Destino:Rio de Janeiro,HoraPartida:03h27m,HoraChegada:06h29m,DataPartida:12/06/2019,DataChegada:13/06/2019,Voo:AQ14,Preço:421.30;\n\
@@ -29,9 +31,7 @@ Partida:Rio de Janeiro,Destino:São Paulo,HoraPartida:20h02m,HoraChegada:21h45m,
 
 def imprimeTitulo():
     print('\33[94m' + '--'*45)
-    print('Bem vindo a MV.ARLINES.')
-    print('Sua melhor opção para viajar o Brasil.')
-    print('Realize seu cadastro ou entre na sua conta!')
+    print(stringTitulo)
     print('--'*45 + '\33[0m')
 
 def imprimeDicionario(dicionario):

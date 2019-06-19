@@ -1,0 +1,14 @@
+#:include listagem.kv
+
+<Compra>:
+    BoxLayout:
+        orientation:'vertical'
+
+        Label:
+            text: 'Você inseriu uma viagem na sua lista! A cobrança das\npassagens será enviada para o seu e-mail em até 5 dias.\nSeguem informações do seu voo:'
+        Label:
+            id: voo
+            text: 'placeholder'
+        Button:
+            text: 'Voltar'
+            on_press: root.ok()

@@ -1,0 +1,28 @@
+#:include listagem.kv
+#:include valormin.kv
+#:include destino.kv
+#:include minhas.kv
+
+<Connected>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "Menu Princiapal"
+            font_size: 32
+        Button:
+            text: "Listar todas as viagens"
+            on_press: root.listarTodas()
+        Button:
+            text: "Pesquisar passagens por preço"
+            on_press: root.listarPreco()
+        Button:
+            text: "Pesquisar por locais e partida e destino"
+            on_press: root.listarDestino()
+        Button:
+            text: "Listar minhas viagens"
+            on_press: root.listarMinhas()
+        
+        Button:
+            text: "Sair"
+            on_press: root.disconnect()

@@ -1,0 +1,46 @@
+#:include connected.kv
+#:include listagem.kv
+<Destino>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'Insira os dados da passagem que deseja comprar:'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                text: 'Local de partida:'
+            TextInput:
+                halign: 'center'
+                placeholder: 'Manaus'
+                size: root.width-root.width/3, 150
+                size_hint: None, None
+                id: partida
+                multiline:False
+                font_size: 32
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                text: 'Local de destino:'
+            TextInput:
+                halign: 'center'
+                placeholder: 'Fortaleza'
+                size: root.width-root.width/3, 150
+                size_hint: None, None
+                id: chegada
+                multiline:False
+                font_size: 32
+        BoxLayout:
+            orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'horizontal'
+            size: root.width, 150
+            size_hint: None, None
+            Button:
+                text: 'Voltar'
+                on_press: root.voltar()
+            Button:
+                text: 'Pesquisar'
+                on_press: root.show(partida.text, chegada.text)
+           

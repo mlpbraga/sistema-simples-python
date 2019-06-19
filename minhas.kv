@@ -1,0 +1,46 @@
+#:include connected.kv
+#:include minhas.kv
+
+
+<Minhas>:
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                id: texto
+                size_hint_y: None
+                height: self.texture_size[1]
+                padding: 10, 10
+                text: 'placeholder'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size: root.width, 150
+            size_hint: None, None
+
+            Label:
+                text: 'Insira ao lado o código do Vôo:'
+
+            BoxLayout:
+                TextInput:
+                    placeholder: 'Código do Vôo:'
+                    size: root.width, 150
+                    size_hint: None, None
+                    id: cod_voo
+                    multiline:False
+                    font_size: 32
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size: root.width, 150
+            size_hint: None, None
+            Button:
+                text: 'Voltar'
+                on_press: root.voltar()
+            Button:
+                text: 'Remover'
+                on_release: root.remover(cod_voo.text)
+                
+           

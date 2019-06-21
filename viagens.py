@@ -2,7 +2,7 @@ from uteis import *
 
 
 class Viagens:
-    def __init__(self, arquivo='viagens.csv'):
+    def __init__(self, arquivo='csv/viagens.csv'):
         self.lista = []
 
         with open(arquivo, 'r+') as f:

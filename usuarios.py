@@ -16,7 +16,7 @@ class Usuario:
         self.dados['Endereço'] = adressText
 
         print('\33[92m> Cadastro realizado com sucesso!\33[94m')
-        with open('person.csv', 'a+') as f:
+        with open('csv/person.csv', 'a+') as f:
             ultima = list(self.dados.keys())[-1]
             for chave in self.dados.keys():
                 f.write(chave + ':' + str(self.dados[chave]))
@@ -24,7 +24,7 @@ class Usuario:
                     f.write(';\n')
                 else:
                     f.write(',')
-        novo = open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'w')
+        novo = open('csv/viagens-' + self.dados['Usuario'].lower() + '.csv', 'w')
         novo.close()
 
     def cadastrar(self):
@@ -57,7 +57,7 @@ class Usuario:
                 self.__init__()
             elif correct in ['S', 's', 'sim']:
                 print('\33[92m> Cadastro realizado com sucesso!\33[94m')
-                with open('person.csv', 'a+') as f:
+                with open('csv/person.csv', 'a+') as f:
                     ultima = list(self.dados.keys())[-1]
                     for chave in self.dados.keys():
                         f.write(chave + ':' + str(self.dados[chave]))
@@ -65,7 +65,7 @@ class Usuario:
                             f.write(';\n')
                         else:
                             f.write(',')
-                novo = open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'w')
+                novo = open('csv/viagens-' + self.dados['Usuario'].lower() + '.csv', 'w')
                 novo.close()
                 return 2
             else:
@@ -73,7 +73,7 @@ class Usuario:
 
     def entrar(self, user, senha):
         if user != '' and senha != '':
-            with open('person.csv', 'r') as f:
+            with open('csv/person.csv', 'r') as f:
                 dados = f.readlines()
                 usuario = dict({})
                 for dado in dados:
@@ -93,7 +93,7 @@ class Usuario:
         return None
 
     def inserirViagem(self, viagem):
-        with open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'a+') as f:
+        with open('csv/iagens-' + self.dados['Usuario'].lower() + '.csv', 'a+') as f:
             ultima = list(viagem.keys())[-1]
             for chave in viagem.keys():
                 f.write(chave + ':' + str(viagem[chave]))
@@ -105,14 +105,14 @@ class Usuario:
         print('passagens será enviada para o seu e-mail em até 5 dias.\33[94m')
     
     def removerViagem(self, voo):
-        with open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'a+') as f:
+        with open('csv/viagens-' + self.dados['Usuario'].lower() + '.csv', 'a+') as f:
             dados = f.readlines()
             aux = ''
             for dado in dados:
                 if 'Voo:'+voo not in dado:
                     aux = aux + dado
         
-        with open('viagens-' + self.dados['Usuario'].lower() + '.csv', 'w') as f:
+        with open('csv/viagens-' + self.dados['Usuario'].lower() + '.csv', 'w') as f:
             f.write(aux)
 
         print('\33[92m> Você removeu essa uma viagem na sua lista!')

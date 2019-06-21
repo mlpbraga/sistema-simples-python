@@ -189,7 +189,6 @@ class Login(Screen):
         self.ids['login'].text = ''
         self.ids['password'].text = ''
 
-
 class LoginApp(App):
     username = StringProperty(None)
     password = StringProperty(None)

@@ -7,7 +7,7 @@ from uteis import *
 # deseje sair e inicializa todos os arquivos e valores necessários.
 
 def main(viagens):
-    arquivoUsr = open('person.csv', 'a+')
+    arquivoUsr = open('csv/person.csv', 'a+')
     arquivoUsr.close()
     imprimeTitulo()
     

@@ -8,17 +8,21 @@
 
         Label:
             text: 'Bem vindo a MV.ARLINES.\nSua melhor opção para viajar o Brasil.\nRealize seu cadastro ou entre na sua conta!'
-            font_size: 32
+            font_size: 40
 
         BoxLayout:
             orientation: 'vertical'
 
             Label:
-                text: 'Usuário'
-                halign: 'left'
+                text: 'Usuário: '
+                text_size: self.size
+                # halign: 'left'
+                # valign: 'middle'
+                font_size: 40
                 text_size: root.width-20,40
 
             TextInput:
+                spacing: 10
                 id: login
                 multiline:False
                 font_size: 40
@@ -28,6 +32,7 @@
             Label:
                 text: 'Senha'
                 halign: 'left'
+                font_size: 40
                 text_size: root.width-20,40
 
             TextInput:
@@ -38,12 +43,12 @@
 
         Button:
             text: 'Entrar'
-            font_size: 24
+            font_size: 40
 
             on_press: root.do_login(login.text, password.text)
         
         Button:
             text: 'Cadastrar'
-            font_size: 24
+            font_size: 40
 
             on_press: root.call_signup()

@@ -6,19 +6,22 @@
         orientation: 'vertical'
 
         Label:
+            font_size: 40
             text: 'Cadastro'
-            font_size: 32
+            font_size: 40
             size: root.width, 60
             size_hint: None, None
 
         BoxLayout:
             orientation: 'horizontal'
+
             BoxLayout:
                 orientation: 'vertical'
                 BoxLayout:
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'Usuario'
                         halign: 'left'
                         # # text_size: root.width-20, 20
@@ -27,46 +30,52 @@
                         id: login
                         hint_text: 'username'
                         multiline:False
-                        font_size: 32
-                        valign: 'middle'
+                        font_size: 40
+                        valign: 'center'
 
                 BoxLayout:
                     orientation: 'vertical'
                     Label:
+                        font_size: 40
                         text: 'Senha'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: '********'
                         id: password
                         multiline:False
                         password:True
-                        font_size: 32
+                        font_size: 40
                 BoxLayout:
                     orientation: 'vertical'
                     Label:
+                        font_size: 40
                         text: 'Confirme a Senha'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
                         id: confirm_password
+                        hint_text: '********'
                         multiline:False
                         password:True
-                        font_size: 32
+                        font_size: 40
                 
                 BoxLayout:
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'Nome'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: 'Nome Completo'
                         id: nome
                         multiline:False
-                        font_size: 32
+                        font_size: 40
             
             
             
@@ -76,66 +85,77 @@
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'Ano de nascimento'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: '1998'
                         id: ano_nascimento
                         multiline:False
-                        font_size: 32
+                        font_size: 40
 
                 BoxLayout:
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'CPF'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: '000.000.000-90'
                         id: cpf
                         multiline:False
-                        font_size: 32
+                        font_size: 40
 
                 BoxLayout:
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'Email'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: 'exemplo@email.com'
                         id: email
                         multiline:False
-                        font_size: 32
+                        font_size: 40
                 BoxLayout:
                     orientation: 'vertical'
 
                     Label:
+                        font_size: 40
                         text: 'Telefone'
                         halign: 'left'
                         # text_size: root.width-20, 20
 
                     TextInput:
+                        hint_text: '99999-9999'
                         id: telefone
                         multiline:False
-                        font_size: 32
+                        font_size: 40
         BoxLayout:
             size: root.width, 250
             size_hint: None, None
             orientation: 'vertical'
 
             Label:
+                font_size: 40
                 text: 'Endereço'
                 halign: 'left'
                 # text_size: root.width-20, 20
 
             TextInput:
+                hint_text: 'Rua X, casa 1, nº 18'
                 id: endereco
                 multiline:False
-                font_size: 32
+                font_size: 40
+
         BoxLayout:
             orientation: 'horizontal'
             size: root.width, 150

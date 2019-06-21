@@ -1,7 +1,7 @@
 stringTitulo = 'Bem vindo a MV.ARLINES.\nSua melhor opção para viajar o Brasil.\nRealize seu cadastro ou entre na sua conta!'
 
 def escreveArquivoViagens():
-    with open('viagens.csv', 'w') as f:
+    with open('csv/viagens.csv', 'w') as f:
         f.write("Partida:São Paulo,Destino:Manaus,HoraPartida:18h22m,HoraChegada:20h47m,DataPartida:12/06/2019,DataChegada:12/06/2019,Voo:87JK,Preço:836.03;\n\
 Partida:São Paulo,Destino:Rio de Janeiro,HoraPartida:23h41m,HoraChegada:01h28m,DataPartida:12/06/2019,DataChegada:13/06/2019,Voo:AI1O,Preço:421.30;\n\
 Partida:São Paulo,Destino:Fortaleza,HoraPartida:13h02m,HoraChegada:17h10m,DataPartida:14/07/2019,DataChegada:14/07/2019,Voo:JS52,Preço:727.41;\n\
